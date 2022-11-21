@@ -1,10 +1,7 @@
 package com.jine.dribbble.menu
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -27,11 +24,13 @@ import com.jine.dribbble.ui.theme.DribbbleTheme
 fun MenuScreen(onClick: (destination: String) -> Unit) {
     val systemUiController = rememberSystemUiController()
     systemUiController.setSystemBarsColor(color = MaterialTheme.colors.background)
-    val destinations = listOf(Destinations.FinanceConcept)
+    val destinations = listOf(Destinations.FinanceConcept, Destinations.EyeCream)
     LazyVerticalGrid(
         modifier = Modifier.background(MaterialTheme.colors.background),
         contentPadding = PaddingValues(16.dp),
         columns = GridCells.Fixed(2),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
         content = {
             items(destinations) { destination ->
                 MenuCell(

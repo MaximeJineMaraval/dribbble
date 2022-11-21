@@ -1,6 +1,8 @@
 package com.jine.dribbble
 
 import androidx.compose.ui.graphics.Brush
+import com.jine.dribbble.eyecream.EyeCreamGradiant
+import com.jine.dribbble.financeconcept.FinanceConceptGradiant
 import com.jine.dribbble.financeconcept.FinanceConceptPink
 import com.jine.dribbble.financeconcept.FinanceConceptPurple
 
@@ -12,6 +14,11 @@ sealed class Destinations(val title: String, val background: Brush?) {
 
     object FinanceConcept : Destinations(
         title = "Finance Concept",
-        background = Brush.linearGradient(listOf(FinanceConceptPink, FinanceConceptPurple))
+        background = FinanceConceptGradiant
+    )
+
+    object EyeCream : Destinations(
+        title = "Eye Cream",
+        background = EyeCreamGradiant
     )
 }
