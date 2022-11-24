@@ -15,6 +15,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.jine.dribbble.eyecream.EyeCreamScreen
 import com.jine.dribbble.financeconcept.FinanceConceptScreen
+import com.jine.dribbble.halloweenevents.HalloweenEventsScreen
 import com.jine.dribbble.menu.MenuScreen
 import com.jine.dribbble.ui.theme.DribbbleTheme
 
@@ -42,6 +43,7 @@ fun Navigation() {
         composable(Destinations.Menu.title) { MenuScreen(onClick = { navController.navigate(it) }) }
         composable(Destinations.FinanceConcept.title) { FinanceConceptScreen() }
         composable(Destinations.EyeCream.title) { EyeCreamScreen() }
+        composable(Destinations.HalloweenEvents.title) { HalloweenEventsScreen() }
     }
 }
 

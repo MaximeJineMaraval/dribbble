@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -24,7 +25,11 @@ import com.jine.dribbble.ui.theme.DribbbleTheme
 fun MenuScreen(onClick: (destination: String) -> Unit) {
     val systemUiController = rememberSystemUiController()
     systemUiController.setSystemBarsColor(color = MaterialTheme.colors.background)
-    val destinations = listOf(Destinations.FinanceConcept, Destinations.EyeCream)
+    val destinations = listOf(
+        Destinations.FinanceConcept,
+        Destinations.EyeCream,
+        Destinations.HalloweenEvents
+    )
     LazyVerticalGrid(
         modifier = Modifier.background(MaterialTheme.colors.background),
         contentPadding = PaddingValues(16.dp),
@@ -36,6 +41,7 @@ fun MenuScreen(onClick: (destination: String) -> Unit) {
                 MenuCell(
                     destination = destination.title,
                     background = destination.background!!,
+                    whiteText = destination is Destinations.HalloweenEvents,
                     onClick = { onClick(destination.title) })
             }
         })
@@ -43,7 +49,12 @@ fun MenuScreen(onClick: (destination: String) -> Unit) {
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-private fun MenuCell(destination: String, background: Brush, onClick: () -> Unit) {
+private fun MenuCell(
+    destination: String,
+    background: Brush,
+    whiteText: Boolean = false,
+    onClick: () -> Unit
+) {
     Card(modifier = Modifier.size(120.dp), elevation = 2.dp, onClick = onClick) {
         Box(
             modifier = Modifier
@@ -51,7 +62,11 @@ private fun MenuCell(destination: String, background: Brush, onClick: () -> Unit
                 .background(background),
             contentAlignment = Alignment.Center
         ) {
-            Text(text = destination, fontWeight = FontWeight.Bold)
+            Text(
+                text = destination,
+                fontWeight = FontWeight.Bold,
+                color = if (whiteText) Color.White else Color.Black
+            )
         }
     }
 }
