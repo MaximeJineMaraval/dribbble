@@ -1,6 +1,7 @@
 package com.jine.dribbble
 
 import androidx.compose.ui.graphics.Brush
+import com.jine.dribbble.egarden.EGardenGradient
 import com.jine.dribbble.eyecream.EyeCreamGradiant
 import com.jine.dribbble.financeconcept.FinanceConceptGradiant
 import com.jine.dribbble.financeconcept.FinanceConceptPink
@@ -26,5 +27,10 @@ sealed class Destinations(val title: String, val background: Brush?) {
     object HalloweenEvents : Destinations(
         title = "Halloween Events",
         background = HalloweenEventsGradiant
+    )
+
+    object EGarden : Destinations(
+        title = "E-Garden",
+        background = EGardenGradient
     )
 }

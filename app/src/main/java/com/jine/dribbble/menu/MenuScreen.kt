@@ -28,7 +28,8 @@ fun MenuScreen(onClick: (destination: String) -> Unit) {
     val destinations = listOf(
         Destinations.FinanceConcept,
         Destinations.EyeCream,
-        Destinations.HalloweenEvents
+        Destinations.HalloweenEvents,
+        Destinations.EGarden
     )
     LazyVerticalGrid(
         modifier = Modifier.background(MaterialTheme.colors.background),
