@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.jine.dribbble.R
+import com.jine.dribbble.showNotImplementedToast
 
 @Composable
 fun EGardenStore(modifier: Modifier) {
@@ -120,7 +121,7 @@ private fun CartButton(modifier: Modifier = Modifier) {
         .height(40.dp),
         shape = RoundedCornerShape(topStart = 16.dp, bottomStart = 16.dp),
         elevation = 10.dp,
-        onClick = { showEGardenNotImplementedToast(context) }) {
+        onClick = { showNotImplementedToast(context) }) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Spacer(modifier = Modifier.size(12.dp))
             Icon(
@@ -169,7 +170,7 @@ private fun Search(modifier: Modifier = Modifier) {
             imeAction = ImeAction.Search
         ),
         keyboardActions = KeyboardActions(onSearch = {
-            showEGardenNotImplementedToast(context)
+            showNotImplementedToast(context)
         })
     ) {
         TextFieldDefaults.TextFieldDecorationBox(
@@ -223,7 +224,7 @@ private fun Filter(modifier: Modifier = Modifier) {
         modifier = modifier
             .clip(RoundedCornerShape(12.dp))
             .background(EGardenGreyExtraLight)
-            .clickable { showEGardenNotImplementedToast(context) }
+            .clickable { showNotImplementedToast(context) }
             .padding(vertical = 8.dp, horizontal = 22.dp)
     ) {
         Icon(
@@ -263,7 +264,7 @@ private fun PrimaryContent(modifier: Modifier = Modifier) {
             modifier = Modifier.fillMaxSize(),
             shape = RoundedCornerShape(radius),
             elevation = 28.dp,
-            onClick = { showEGardenNotImplementedToast(context) }
+            onClick = { showNotImplementedToast(context) }
         ) {
             Box {
                 Image(
@@ -326,7 +327,7 @@ private fun ProductItem(imageId: Int, title: String, subtitle: String) {
         elevation = 8.dp,
         backgroundColor = EGardenWhite,
         shape = RoundedCornerShape(8.dp),
-        onClick = { showEGardenNotImplementedToast(context) }
+        onClick = { showNotImplementedToast(context) }
     ) {
         Column(
             modifier = Modifier.padding(start = 18.dp, top = 12.dp, end = 18.dp, bottom = 10.dp),
@@ -387,7 +388,7 @@ private fun PlantTypesItem(imageId: Int, title: String, subtitle: String) {
             .height(144.dp),
         shape = RoundedCornerShape(8.dp),
         elevation = 0.dp,
-        onClick = { showEGardenNotImplementedToast(context) }
+        onClick = { showNotImplementedToast(context) }
     ) {
         Image(
             painter = painterResource(id = imageId),
@@ -487,7 +488,7 @@ private fun PopularItem(
         backgroundColor = colorStrong,
         elevation = 0.dp,
         shape = RoundedCornerShape(8.dp),
-        onClick = { showEGardenNotImplementedToast(context) }) {
+        onClick = { showNotImplementedToast(context) }) {
         ConstraintLayout() {
 
             val (shape1, shape2) = createRefs()

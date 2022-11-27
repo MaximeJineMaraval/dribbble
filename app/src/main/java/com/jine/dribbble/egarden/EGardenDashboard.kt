@@ -28,6 +28,7 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.calculateCurrentOffsetForPage
 import com.jine.dribbble.R
+import com.jine.dribbble.showNotImplementedToast
 import kotlin.math.absoluteValue
 
 // TODO: exporter les SVGS plutôt que les PNGs
@@ -78,7 +79,7 @@ fun EGardenDashboard(modifier: Modifier) {
 private fun PlusButton(modifier: Modifier) {
     val context = LocalContext.current
     IconButton(
-        onClick = { showEGardenNotImplementedToast(context) },
+        onClick = { showNotImplementedToast(context) },
         modifier = modifier
     ) {
         Icon(
@@ -94,7 +95,7 @@ private fun PlusButton(modifier: Modifier) {
 private fun DisplayButtons(modifier: Modifier) {
     val context = LocalContext.current
     Row(modifier) {
-        IconButton(onClick = { showEGardenNotImplementedToast(context) }) {
+        IconButton(onClick = { showNotImplementedToast(context) }) {
             Icon(
                 modifier = Modifier.size(24.dp),
                 painter = painterResource(id = R.drawable.egarden_grid),
@@ -102,7 +103,7 @@ private fun DisplayButtons(modifier: Modifier) {
                 contentDescription = "Show as a grid"
             )
         }
-        IconButton(onClick = { showEGardenNotImplementedToast(context) }) {
+        IconButton(onClick = { showNotImplementedToast(context) }) {
             Icon(
                 modifier = Modifier.size(24.dp),
                 painter = painterResource(id = R.drawable.egarden_card),
@@ -195,7 +196,7 @@ private fun PlantCard(
             .width(232.dp),
         shape = RoundedCornerShape(8.dp),
         elevation = 16.dp,
-        onClick = { showEGardenNotImplementedToast(context) }
+        onClick = { showNotImplementedToast(context) }
     ) {
         Box(contentAlignment = Alignment.BottomCenter) {
             Box(

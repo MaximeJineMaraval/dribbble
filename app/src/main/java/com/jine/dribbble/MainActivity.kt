@@ -1,6 +1,8 @@
 package com.jine.dribbble
 
+import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -17,6 +19,7 @@ import com.jine.dribbble.egarden.EGardenScreen
 import com.jine.dribbble.eyecream.EyeCreamScreen
 import com.jine.dribbble.financeconcept.FinanceConceptScreen
 import com.jine.dribbble.halloweenevents.HalloweenEventsScreen
+import com.jine.dribbble.meditation.MeditationScreen
 import com.jine.dribbble.menu.MenuScreen
 import com.jine.dribbble.ui.theme.DribbbleTheme
 
@@ -46,6 +49,7 @@ fun Navigation() {
         composable(Destinations.EyeCream.title) { EyeCreamScreen() }
         composable(Destinations.HalloweenEvents.title) { HalloweenEventsScreen() }
         composable(Destinations.EGarden.title) { EGardenScreen() }
+        composable(Destinations.Meditation.title) { MeditationScreen() }
     }
 }
 
@@ -60,4 +64,9 @@ fun DefaultPreview() {
     DribbbleTheme {
         Greeting("Android")
     }
+}
+
+
+fun showNotImplementedToast(context: Context) {
+    Toast.makeText(context, "Not implemented", Toast.LENGTH_SHORT).show()
 }

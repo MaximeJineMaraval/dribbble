@@ -1,7 +1,5 @@
 package com.jine.dribbble.egarden
 
-import android.content.Context
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.BottomNavigation
@@ -23,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.jine.dribbble.R
+import com.jine.dribbble.showNotImplementedToast
 
 // TODO: exporter les SVGS plutôt que les PNGs
 val EGardenWhite = Color(0xFFFFFFFF)
@@ -108,7 +107,7 @@ private fun EGardenBottomBar(
         EGardenBottomBarItem(
             selected = screenIndexSelected == 2,
             onClick = {
-                showEGardenNotImplementedToast(context)
+                showNotImplementedToast(context)
             },
             iconResId = R.drawable.egarden_nav_settings,
             label = "Settings"
@@ -116,16 +115,12 @@ private fun EGardenBottomBar(
         EGardenBottomBarItem(
             selected = screenIndexSelected == 3,
             onClick = {
-                showEGardenNotImplementedToast(context)
+                showNotImplementedToast(context)
             },
             iconResId = R.drawable.egarden_nav_user,
             label = "Profile"
         )
     }
-}
-
-fun showEGardenNotImplementedToast(context: Context) {
-    Toast.makeText(context, "Not implemented", Toast.LENGTH_SHORT).show()
 }
 
 @Composable
