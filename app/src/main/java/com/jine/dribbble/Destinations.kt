@@ -8,6 +8,7 @@ import com.jine.dribbble.financeconcept.FinanceConceptPink
 import com.jine.dribbble.financeconcept.FinanceConceptPurple
 import com.jine.dribbble.halloweenevents.HalloweenEventsGradiant
 import com.jine.dribbble.meditation.MeditationGradient
+import com.jine.dribbble.tesla.TeslaGradient
 
 sealed class Destinations(val title: String, val background: Brush?) {
     object Menu : Destinations(
@@ -38,5 +39,10 @@ sealed class Destinations(val title: String, val background: Brush?) {
     object Meditation : Destinations(
         title = "Meditation",
         background = MeditationGradient
+    )
+
+    object Tesla: Destinations(
+        title = "Tesla",
+        background = TeslaGradient
     )
 }
