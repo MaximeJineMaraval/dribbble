@@ -21,6 +21,7 @@ import com.jine.dribbble.financeconcept.FinanceConceptScreen
 import com.jine.dribbble.halloweenevents.HalloweenEventsScreen
 import com.jine.dribbble.meditation.MeditationScreen
 import com.jine.dribbble.menu.MenuScreen
+import com.jine.dribbble.movie.MovieScreen
 import com.jine.dribbble.tesla.TeslaScreen
 import com.jine.dribbble.ui.theme.DribbbleTheme
 
@@ -52,6 +53,7 @@ fun Navigation() {
         composable(Destinations.EGarden.title) { EGardenScreen() }
         composable(Destinations.Meditation.title) { MeditationScreen() }
         composable(Destinations.Tesla.title) { TeslaScreen() }
+        composable(Destinations.Movie.title) { MovieScreen() }
     }
 }
 
