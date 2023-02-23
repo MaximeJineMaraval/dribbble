@@ -33,7 +33,8 @@ fun MenuScreen(onClick: (destination: String) -> Unit) {
         Destinations.Meditation,
         Destinations.Tesla,
         Destinations.Movie,
-        Destinations.Snowboard
+        Destinations.Snowboard,
+        Destinations.Education
     )
     LazyVerticalGrid(
         modifier = Modifier.background(MaterialTheme.colors.background),

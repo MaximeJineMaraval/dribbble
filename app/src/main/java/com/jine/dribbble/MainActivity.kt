@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.jine.dribbble.education.EducationScreen
 import com.jine.dribbble.egarden.EGardenScreen
 import com.jine.dribbble.eyecream.EyeCreamScreen
 import com.jine.dribbble.financeconcept.FinanceConceptScreen
@@ -56,6 +57,7 @@ fun Navigation() {
         composable(Destinations.Tesla.title) { TeslaScreen() }
         composable(Destinations.Movie.title) { MovieScreen() }
         composable(Destinations.Snowboard.title) { SnowboardScreen() }
+        composable(Destinations.Education.title) { EducationScreen() }
     }
 }
 

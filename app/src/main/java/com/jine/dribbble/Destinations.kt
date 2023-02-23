@@ -1,11 +1,10 @@
 package com.jine.dribbble
 
 import androidx.compose.ui.graphics.Brush
+import com.jine.dribbble.education.EducationGradient
 import com.jine.dribbble.egarden.EGardenGradient
 import com.jine.dribbble.eyecream.EyeCreamGradiant
 import com.jine.dribbble.financeconcept.FinanceConceptGradiant
-import com.jine.dribbble.financeconcept.FinanceConceptPink
-import com.jine.dribbble.financeconcept.FinanceConceptPurple
 import com.jine.dribbble.halloweenevents.HalloweenEventsGradiant
 import com.jine.dribbble.meditation.MeditationGradient
 import com.jine.dribbble.movie.MovieGradient
@@ -43,18 +42,23 @@ sealed class Destinations(val title: String, val background: Brush?) {
         background = MeditationGradient
     )
 
-    object Tesla: Destinations(
+    object Tesla : Destinations(
         title = "Tesla",
         background = TeslaGradient
     )
 
-    object Movie: Destinations(
+    object Movie : Destinations(
         title = "Movie",
         background = MovieGradient
     )
 
-    object Snowboard: Destinations(
+    object Snowboard : Destinations(
         title = "Snowboard",
         background = SnowboardGradient
+    )
+
+    object Education : Destinations(
+        title = "Education",
+        background = EducationGradient
     )
 }
