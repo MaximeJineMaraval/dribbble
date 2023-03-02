@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.jine.dribbble.R
+import com.jine.dribbble.customClick
 import com.jine.dribbble.showNotImplementedToast
 
 @Composable

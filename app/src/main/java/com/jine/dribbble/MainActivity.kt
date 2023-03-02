@@ -6,11 +6,13 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -23,6 +25,7 @@ import com.jine.dribbble.halloweenevents.HalloweenEventsScreen
 import com.jine.dribbble.meditation.MeditationScreen
 import com.jine.dribbble.menu.MenuScreen
 import com.jine.dribbble.movie.MovieScreen
+import com.jine.dribbble.skeuomorphism.SkeuomorphismScreen
 import com.jine.dribbble.snowboard.SnowboardScreen
 import com.jine.dribbble.tesla.TeslaScreen
 import com.jine.dribbble.ui.theme.DribbbleTheme
@@ -58,6 +61,7 @@ fun Navigation() {
         composable(Destinations.Movie.title) { MovieScreen() }
         composable(Destinations.Snowboard.title) { SnowboardScreen() }
         composable(Destinations.Education.title) { EducationScreen() }
+        composable(Destinations.Skeuomorphism.title) { SkeuomorphismScreen() }
     }
 }
 
@@ -78,3 +82,27 @@ fun DefaultPreview() {
 fun showNotImplementedToast(context: Context) {
     Toast.makeText(context, "Not implemented", Toast.LENGTH_SHORT).show()
 }
+
+fun Modifier.customClick(
+    onClick: () -> Unit,
+    onPress: () -> Unit,
+    onRelease: () -> Unit,
+    onCancel: () -> Unit = onRelease
+) = this.then(
+    this.pointerInput(Unit) {
+        detectTapGestures(onPress = {
+            var isCorrectlyReleased = false
+            try {
+                onPress()
+                isCorrectlyReleased = tryAwaitRelease()
+            } finally {
+                if (isCorrectlyReleased) {
+                    onClick()
+                    onRelease()
+                } else {
+                    onCancel()
+                }
+            }
+        })
+    }
+)

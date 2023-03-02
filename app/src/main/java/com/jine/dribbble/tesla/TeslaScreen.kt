@@ -39,6 +39,7 @@ import com.gandiva.neumorphic.shape.Oval
 import com.gandiva.neumorphic.shape.Pressed
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.jine.dribbble.R
+import com.jine.dribbble.customClick
 
 val TeslaBackgroundTop = Color(0xFF353A40)
 val TeslaBackgroundBottom = Color(0xFF16171B)
@@ -374,30 +375,6 @@ inline val Int.teslaDp: Dp
 @Stable
 inline val Int.teslaSp: TextUnit
     get() = (this * 0.80).sp
-
-fun Modifier.customClick(
-    onClick: () -> Unit,
-    onPress: () -> Unit,
-    onRelease: () -> Unit,
-    onCancel: () -> Unit = onRelease
-) = this.then(
-    this.pointerInput(Unit) {
-        detectTapGestures(onPress = {
-            var isCorrectlyReleased = false
-            try {
-                onPress()
-                isCorrectlyReleased = tryAwaitRelease()
-            } finally {
-                if (isCorrectlyReleased) {
-                    onClick()
-                    onRelease()
-                } else {
-                    onCancel()
-                }
-            }
-        })
-    }
-)
 
 // Preview
 
