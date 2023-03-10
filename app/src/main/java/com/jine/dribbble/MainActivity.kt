@@ -21,6 +21,7 @@ import com.jine.dribbble.education.EducationScreen
 import com.jine.dribbble.egarden.EGardenScreen
 import com.jine.dribbble.eyecream.EyeCreamScreen
 import com.jine.dribbble.financeconcept.FinanceConceptScreen
+import com.jine.dribbble.foodee.FoodeeScreen
 import com.jine.dribbble.halloweenevents.HalloweenEventsScreen
 import com.jine.dribbble.meditation.MeditationScreen
 import com.jine.dribbble.menu.MenuScreen
@@ -62,6 +63,7 @@ fun Navigation() {
         composable(Destinations.Snowboard.title) { SnowboardScreen() }
         composable(Destinations.Education.title) { EducationScreen() }
         composable(Destinations.Skeuomorphism.title) { SkeuomorphismScreen() }
+        composable(Destinations.Foodee.title) { FoodeeScreen() }
     }
 }
 
