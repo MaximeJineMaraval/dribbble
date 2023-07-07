@@ -49,7 +49,7 @@ fun FoodeeScreen() {
     when (index) {
         0 -> FoodeeHomePage(onProductClicked = { index = 1 }, onCartClicked = { index = 2 })
         1 -> FoodeeProductPage(onCloseClicked = { index = 0 }, onProductAddedToCart = { index = 2 })
-        2 -> {} //todo FoodeeCartPage
+        2 -> FoodeeMyCart(onCloseClicked = {index = 0 })
     }
 }
 

@@ -9,6 +9,7 @@ import com.jine.dribbble.foodee.FoodeeGradient
 import com.jine.dribbble.halloweenevents.HalloweenEventsGradiant
 import com.jine.dribbble.meditation.MeditationGradient
 import com.jine.dribbble.movie.MovieGradient
+import com.jine.dribbble.paypal.PaypalGradient
 import com.jine.dribbble.skeuomorphism.SkeuomorphismGradient
 import com.jine.dribbble.snowboard.SnowboardGradient
 import com.jine.dribbble.tesla.TeslaGradient
@@ -71,5 +72,10 @@ sealed class Destinations(val title: String, val background: Brush?) {
     object Foodee : Destinations(
         title = "Foodee",
         background = FoodeeGradient
+    )
+
+    object Paypal : Destinations(
+        title = "Paypal",
+        background = PaypalGradient
     )
 }

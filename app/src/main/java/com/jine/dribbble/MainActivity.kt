@@ -26,6 +26,7 @@ import com.jine.dribbble.halloweenevents.HalloweenEventsScreen
 import com.jine.dribbble.meditation.MeditationScreen
 import com.jine.dribbble.menu.MenuScreen
 import com.jine.dribbble.movie.MovieScreen
+import com.jine.dribbble.paypal.PaypalApp
 import com.jine.dribbble.skeuomorphism.SkeuomorphismScreen
 import com.jine.dribbble.snowboard.SnowboardScreen
 import com.jine.dribbble.tesla.TeslaScreen
@@ -64,6 +65,7 @@ fun Navigation() {
         composable(Destinations.Education.title) { EducationScreen() }
         composable(Destinations.Skeuomorphism.title) { SkeuomorphismScreen() }
         composable(Destinations.Foodee.title) { FoodeeScreen() }
+        composable(Destinations.Paypal.title) { PaypalApp() }
     }
 }
 

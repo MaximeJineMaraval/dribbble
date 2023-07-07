@@ -36,7 +36,8 @@ fun MenuScreen(onClick: (destination: String) -> Unit) {
         Destinations.Snowboard,
         Destinations.Education,
         Destinations.Skeuomorphism,
-        Destinations.Foodee
+        Destinations.Foodee,
+        Destinations.Paypal
     )
     LazyVerticalGrid(
         modifier = Modifier.background(MaterialTheme.colors.background),
@@ -49,7 +50,7 @@ fun MenuScreen(onClick: (destination: String) -> Unit) {
                 MenuCell(
                     destination = destination.title,
                     background = destination.background!!,
-                    whiteText = destination is Destinations.HalloweenEvents || destination is Destinations.Tesla,
+                    whiteText = destination is Destinations.HalloweenEvents || destination is Destinations.Tesla || destination is Destinations.Paypal,
                     onClick = { onClick(destination.title) })
             }
         })

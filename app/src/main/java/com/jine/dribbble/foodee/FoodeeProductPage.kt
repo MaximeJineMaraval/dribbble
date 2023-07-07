@@ -35,8 +35,6 @@ import com.jine.dribbble.R
 import com.jine.dribbble.customClick
 import com.jine.dribbble.showNotImplementedToast
 
-// TODO: Faire une animation au scroll : Conserver Mr.Cheeze + les badges + le close Button, réduire le burger de la hauteur des 2 badges. Cette partie s'anime au scroll et est donc sticky
-
 //region Screen
 
 @Composable
